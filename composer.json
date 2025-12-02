@@ -1,0 +1,10 @@
+{
+    "name": "rija/phpunit-training",
+    "description": "PHPUnit Training",
+    "autoload": {
+        "psr-4": {
+            "Rija\\PhpunitTraining\\": "src/"
+        }
+    },
+    "require": {}
+}
