@@ -9,6 +9,11 @@ namespace Src;
  */
 class Queue
 {
+    /**
+     * Maximum number of items in the queue
+     * @var int
+     */
+    public const MAX_ITEMS = 5;
 
     /**
      * Queue items
@@ -23,6 +28,10 @@ class Queue
      */
     public function push($item)
     {
+        if ($this->getCount() == static::MAX_ITEMS) {
+            throw new QueueException("Queue is full");
+        }
+
         $this->items[] = $item;
     }
 
