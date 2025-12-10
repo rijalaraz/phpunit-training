@@ -10,4 +10,9 @@ final class ExampleTest extends TestCase
     {
         $this->assertEquals(4, 2+2);
     }
+
+    public function tearDown(): void
+    {
+        \Mockery::close();
+    }
 }

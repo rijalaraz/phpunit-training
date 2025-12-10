@@ -1,5 +1,7 @@
 <?php
 
+namespace Tests\Test_doubles;
+
 use PHPUnit\Framework\TestCase;
 use Src\Mailer;
 

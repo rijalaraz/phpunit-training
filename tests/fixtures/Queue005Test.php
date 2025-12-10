@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Queue;
+namespace Tests\Fixtures;
 
 use PHPUnit\Framework\TestCase;
 use Src\Queue;
