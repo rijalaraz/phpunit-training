@@ -23,7 +23,7 @@ final class Order
 
     /**
      * Process the order
-     * @return boolean
+     * @return bool
      */
     public function process()
     {
