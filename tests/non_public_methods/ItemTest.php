@@ -3,6 +3,7 @@
 namespace Tests\Non_public_methods;
 
 use PHPUnit\Framework\TestCase;
+use ReflectionClass;
 use Src\Item;
 use Src\ItemChild;
 
@@ -20,5 +21,19 @@ final class ItemTest extends TestCase
         $item = new ItemChild();
 
         $this->assertIsInt($item->getID());
+    }
+
+    public function testTokenIsAString()
+    {
+        $item = new Item();
+
+        $reflector = new ReflectionClass(objectOrClass: Item::class);
+
+        $method = $reflector->getMethod('getToken');
+        $method->setAccessible(true);
+
+        $result = $method->invoke(object: $item);
+
+        $this->assertIsString($result);
     }
 }
