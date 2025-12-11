@@ -10,13 +10,17 @@ final class MailerTest extends TestCase
 {
     public function testSendMessageReturnsTrue()
     {
-        $this->assertTrue(Mailer::send('dave@example.com', 'Hello!'));
+        $mailer = new Mailer();
+
+        $this->assertTrue($mailer->send('dave@example.com', 'Hello!'));
     }
 
     public function testInvalidArgumentExceptionIfEmailIsEmpty()
     {
         $this->expectException(InvalidArgumentException::class);
 
-        Mailer::send('', '');
+        $mailer = new Mailer();
+
+        $mailer->send('', '');
     }
 }

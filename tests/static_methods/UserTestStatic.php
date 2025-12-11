@@ -14,6 +14,10 @@ final class UserTestStatic extends TestCase
 
         $mailer = $this->createMock(Mailer::class);
 
+        $mailer->expects($this->once())
+                ->method('send')
+                ->willReturn(true);
+
         $user->setMailer($mailer);
 
         $this->assertTrue($user->notify('Hello!'));
