@@ -39,4 +39,9 @@ class Item
     {
         return uniqid();
     }
+
+    private function getPrefixedToken(string $prefix)
+    {
+        return uniqid($prefix);
+    }
 }
