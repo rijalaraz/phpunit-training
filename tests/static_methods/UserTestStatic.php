@@ -22,4 +22,13 @@ final class UserTestStatic extends TestCase
 
         $this->assertTrue($user->notify('Hello!'));
     }
+
+    public function testNotifyReturnsTrueWithCallable()
+    {
+        $user = new UserStatic('dave@example.com');
+
+        $user->setMailerCallable([Mailer::class, 'send']);
+
+        $this->assertTrue($user->notifyCallable('Hello!'));
+    }
 }
